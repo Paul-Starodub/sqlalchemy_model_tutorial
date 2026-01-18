@@ -10,7 +10,7 @@ if TYPE_CHECKING:
 class Post(Base):
     title: Mapped[str] = mapped_column(String(100))
     body: Mapped[str] = mapped_column(Text(200), default="", server_default="")
-    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"))
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"))  # Foreign key to User
     user: Mapped["User"] = relationship(back_populates="posts")
 
     def __repr__(self) -> str:
