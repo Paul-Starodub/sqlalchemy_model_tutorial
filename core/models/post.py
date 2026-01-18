@@ -5,7 +5,6 @@ from core.models.mixins import UserRelationMixin
 
 
 class Post(UserRelationMixin, Base):
-    __tablename__ = "posts"
     _user_back_populates = "posts"
 
     title: Mapped[str] = mapped_column(String(100))
