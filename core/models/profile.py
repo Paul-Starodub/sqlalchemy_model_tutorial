@@ -6,7 +6,6 @@ from core.models.mixins import UserRelationMixin
 
 class Profile(UserRelationMixin, Base):
     __tablename__ = "profiles"
-
     _user_id_unique = True
     _user_back_populates = "profile"
 
